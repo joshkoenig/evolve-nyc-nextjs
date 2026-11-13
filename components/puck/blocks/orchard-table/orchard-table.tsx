@@ -6,10 +6,14 @@ export interface OrchardTableProps {
   rows: { cells: { value: string }[] }[];
 }
 
-export function OrchardTableRender({ caption, headers, rows }: OrchardTableProps) {
+export function OrchardTableRender({
+  caption,
+  headers,
+  rows,
+}: OrchardTableProps) {
   const columns = headers ?? [];
   return (
-    <div style={{ overflowX: "auto" }}>
+    <div className="orchard-block" style={{ overflowX: "auto" }}>
       <table className="orchard-table-stacked-row-plus">
         {caption ? <caption>{caption}</caption> : null}
         <thead>

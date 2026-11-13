@@ -8,5 +8,6 @@
  */
 import "@georgiagov/orchard/orchard.min.css";
 import "@georgiagov/orchard/palettes/foundation.css";
+import "./orchard-layout.css";
 
 export { safeUrl } from "@/lib/safe-url";

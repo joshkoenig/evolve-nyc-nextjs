@@ -12,7 +12,10 @@ export const OrchardAlertBlock: ComponentConfig<OrchardAlertProps> = {
         { label: "Warning (orange)", value: "warning" },
         { label: "Emergency (red)", value: "emergency" },
       ],
-      ai: { instructions: "Severity. Notice for general news, warning for service impacts, emergency for urgent safety information." },
+      ai: {
+        instructions:
+          "Severity. Notice for general news, warning for service impacts, emergency for urgent safety information.",
+      },
     },
     heading: {
       type: "text" as const,
@@ -39,7 +42,8 @@ export const OrchardAlertBlock: ComponentConfig<OrchardAlertProps> = {
 
 export const meta = defineMeta({
   title: "Orchard Alert",
-  description: "Orchard alert banner in notice, warning or emergency level, with an optional link that turns the whole banner into a link.",
+  description:
+    "Orchard alert banner in notice, warning or emergency level, with an optional link that turns the whole banner into a link.",
   categories: ["orchard"],
   published: false,
 });

@@ -7,16 +7,24 @@ export interface OrchardLinkButtonProps {
   target: "_self" | "_blank";
 }
 
-export function OrchardLinkButtonRender({ label, href, target }: OrchardLinkButtonProps) {
+export function OrchardLinkButtonRender({
+  label,
+  href,
+  target,
+}: OrchardLinkButtonProps) {
   const url = safeUrl(href);
   return (
-    <a
-      className="orchard-link orchard-link--button"
-      href={url || "#"}
-      {...(target === "_blank" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-    >
-      {label}
-      <OrchardCircleArrowIcon />
-    </a>
+    <div className="orchard-block">
+      <a
+        className="orchard-link orchard-link--button"
+        href={url || "#"}
+        {...(target === "_blank"
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
+      >
+        {label}
+        <OrchardCircleArrowIcon />
+      </a>
+    </div>
   );
 }

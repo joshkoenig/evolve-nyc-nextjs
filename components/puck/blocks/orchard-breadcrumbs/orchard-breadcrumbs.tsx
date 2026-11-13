@@ -6,7 +6,10 @@ export interface OrchardBreadcrumbsProps {
   current: string;
 }
 
-export function OrchardBreadcrumbsRender({ items, current }: OrchardBreadcrumbsProps) {
+export function OrchardBreadcrumbsRender({
+  items,
+  current,
+}: OrchardBreadcrumbsProps) {
   return (
     <nav className="breadcrumb" aria-label="Breadcrumb">
       <ol className="breadcrumb__items" style={{ listStyle: "none" }}>

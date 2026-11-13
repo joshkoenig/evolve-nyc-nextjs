@@ -20,7 +20,13 @@ const ICONS = {
   emergency: OrchardAlertEmergencyIcon,
 };
 
-export function OrchardAlertRender({ level, heading, description, href, puck }: OrchardAlertProps) {
+export function OrchardAlertRender({
+  level,
+  heading,
+  description,
+  href,
+  puck,
+}: OrchardAlertProps) {
   const url = puck?.isEditing ? "" : safeUrl(href);
   const Icon = ICONS[level] ?? OrchardAlertNoticeIcon;
   const className = `orchard-alert${level === "notice" ? "" : ` orchard-alert--${level}`}`;
@@ -30,7 +36,9 @@ export function OrchardAlertRender({ level, heading, description, href, puck }: 
         <Icon />
       </span>
       <strong className="orchard-alert__heading">{heading}</strong>
-      {description ? <p className="orchard-alert__description">{description}</p> : null}
+      {description ? (
+        <p className="orchard-alert__description">{description}</p>
+      ) : null}
       {url ? (
         <span className="orchard-alert__arrow">
           <OrchardArrowIcon />
@@ -45,7 +53,10 @@ export function OrchardAlertRender({ level, heading, description, href, puck }: 
           {inner}
         </a>
       ) : (
-        <div className={className} role={level === "notice" ? undefined : "alert"}>
+        <div
+          className={className}
+          role={level === "notice" ? undefined : "alert"}
+        >
           {inner}
         </div>
       )}

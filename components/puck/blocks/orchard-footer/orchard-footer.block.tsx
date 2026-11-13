@@ -4,13 +4,24 @@ import { OrchardFooterRender, type OrchardFooterProps } from "./orchard-footer";
 export type { OrchardFooterProps };
 
 const linkFields = {
-  label: { type: "text" as const, ai: { instructions: "Link text, 1–4 words." } },
-  href: { type: "text" as const, label: "URL (https:// or /path)", ai: { exclude: true } },
+  label: {
+    type: "text" as const,
+    ai: { instructions: "Link text, 1–4 words." },
+  },
+  href: {
+    type: "text" as const,
+    label: "URL (https:// or /path)",
+    ai: { exclude: true },
+  },
 };
 
 export const OrchardFooterBlock: ComponentConfig<OrchardFooterProps> = {
   fields: {
-    wordmark: { type: "text" as const, label: "Site name", ai: { instructions: "Site or agency name shown in the footer." } },
+    wordmark: {
+      type: "text" as const,
+      label: "Site name",
+      ai: { instructions: "Site or agency name shown in the footer." },
+    },
     contactTitle: { type: "text" as const, label: "Contact heading" },
     phone: { type: "text" as const, label: "Phone (leave blank to omit)" },
     email: { type: "text" as const, label: "Email (leave blank to omit)" },
@@ -30,10 +41,26 @@ export const OrchardFooterBlock: ComponentConfig<OrchardFooterProps> = {
       defaultItemProps: { label: "Link", href: "/" },
       getItemSummary: (item: { label: string }) => item.label || "Link",
     },
-    facebook: { type: "text" as const, label: "Facebook URL (optional)", ai: { exclude: true } },
-    youtube: { type: "text" as const, label: "YouTube URL (optional)", ai: { exclude: true } },
-    instagram: { type: "text" as const, label: "Instagram URL (optional)", ai: { exclude: true } },
-    linkedin: { type: "text" as const, label: "LinkedIn URL (optional)", ai: { exclude: true } },
+    facebook: {
+      type: "text" as const,
+      label: "Facebook URL (optional)",
+      ai: { exclude: true },
+    },
+    youtube: {
+      type: "text" as const,
+      label: "YouTube URL (optional)",
+      ai: { exclude: true },
+    },
+    instagram: {
+      type: "text" as const,
+      label: "Instagram URL (optional)",
+      ai: { exclude: true },
+    },
+    linkedin: {
+      type: "text" as const,
+      label: "LinkedIn URL (optional)",
+      ai: { exclude: true },
+    },
     copyright: { type: "text" as const },
   },
   defaultProps: {
@@ -63,7 +90,8 @@ export const OrchardFooterBlock: ComponentConfig<OrchardFooterProps> = {
 
 export const meta = defineMeta({
   title: "Orchard Footer",
-  description: "Orchard site footer: site name, social links, contact details, one or two link columns and a copyright line.",
+  description:
+    "Orchard site footer: site name, social links, contact details, one or two link columns and a copyright line.",
   categories: ["orchard"],
   published: false,
 });

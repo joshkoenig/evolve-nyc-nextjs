@@ -9,24 +9,36 @@ export interface OrchardAccordionProps {
   toggleAll: "off" | "on";
 }
 
-export function OrchardAccordionRender({ items, toggleAll }: OrchardAccordionProps) {
+export function OrchardAccordionRender({
+  items,
+  toggleAll,
+}: OrchardAccordionProps) {
   const root = useRef<HTMLDivElement>(null);
   const [allOpen, setAllOpen] = useState(false);
 
   function onToggleAll() {
     const next = !allOpen;
     setAllOpen(next);
-    root.current?.querySelectorAll("details.orchard-accordion").forEach((el) => {
-      (el as HTMLDetailsElement).open = next;
-    });
+    root.current
+      ?.querySelectorAll("details.orchard-accordion")
+      .forEach((el) => {
+        (el as HTMLDetailsElement).open = next;
+      });
   }
 
   return (
-    <div ref={root}>
+    <div className="orchard-block" ref={root}>
       {toggleAll === "on" ? (
-        <button type="button" className="orchard-accordion-toggle" aria-expanded={allOpen} onClick={onToggleAll}>
+        <button
+          type="button"
+          className="orchard-accordion-toggle"
+          aria-expanded={allOpen}
+          onClick={onToggleAll}
+        >
           <OrchardPlusMinusIcon />
-          <span className="orchard-accordion-toggle__text">{allOpen ? "Hide all sections" : "Show all sections"}</span>
+          <span className="orchard-accordion-toggle__text">
+            {allOpen ? "Hide all sections" : "Show all sections"}
+          </span>
         </button>
       ) : null}
       {(items ?? []).map((item, index) => (

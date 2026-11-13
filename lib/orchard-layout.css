@@ -1,0 +1,9 @@
+/* Orchard blocks are individual components, not a page layout. Give the content
+   blocks a shared reading width and gutters so a page built from them lines up. */
+.orchard-block {
+  box-sizing: border-box;
+  max-inline-size: 80rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+  padding-block: 0.75rem;
+}

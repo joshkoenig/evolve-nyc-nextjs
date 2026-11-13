@@ -11,7 +11,16 @@ export interface OrchardCardProps {
   puck?: { isEditing?: boolean };
 }
 
-export function OrchardCardRender({ title, body, imageSrc, imageAlt, href, linkLabel, dark, puck }: OrchardCardProps) {
+export function OrchardCardRender({
+  title,
+  body,
+  imageSrc,
+  imageAlt,
+  href,
+  linkLabel,
+  dark,
+  puck,
+}: OrchardCardProps) {
   const url = puck?.isEditing ? "" : safeUrl(href);
   const image = safeUrl(imageSrc);
   const hasMoreLink = Boolean(url && linkLabel);
@@ -24,21 +33,27 @@ export function OrchardCardRender({ title, body, imageSrc, imageAlt, href, linkL
     .filter(Boolean)
     .join(" ");
   return (
-    <div className="orchard-card-wrapper">
-      <div className={className}>
-        {image ? (
-          <div className="orchard-card__image-wrapper">
-            <img className="orchard-card__image" src={image} alt={imageAlt ?? ""} />
-          </div>
-        ) : null}
-        <div className="orchard-card__content">
-          <h2>{title}</h2>
-          {body ? <p>{body}</p> : null}
-          {hasMoreLink ? (
-            <p>
-              <a href={url}>{linkLabel}</a>
-            </p>
+    <div className="orchard-block">
+      <div className="orchard-card-wrapper">
+        <div className={className}>
+          {image ? (
+            <div className="orchard-card__image-wrapper">
+              <img
+                className="orchard-card__image"
+                src={image}
+                alt={imageAlt ?? ""}
+              />
+            </div>
           ) : null}
+          <div className="orchard-card__content">
+            <h2>{title}</h2>
+            {body ? <p>{body}</p> : null}
+            {hasMoreLink ? (
+              <p>
+                <a href={url}>{linkLabel}</a>
+              </p>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>

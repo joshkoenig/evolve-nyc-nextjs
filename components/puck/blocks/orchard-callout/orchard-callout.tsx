@@ -7,8 +7,12 @@ export interface OrchardCalloutProps {
 
 export function OrchardCalloutRender({ style, content }: OrchardCalloutProps) {
   return (
-    <blockquote className={`orchard-callout orchard-callout--${style === "quote" ? "quote" : "standard"}`}>
-      <p>{content}</p>
-    </blockquote>
+    <div className="orchard-block">
+      <blockquote
+        className={`orchard-callout orchard-callout--${style === "quote" ? "quote" : "standard"}`}
+      >
+        <p>{content}</p>
+      </blockquote>
+    </div>
   );
 }

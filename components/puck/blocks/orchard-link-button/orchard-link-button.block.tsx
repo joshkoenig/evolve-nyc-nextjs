@@ -1,12 +1,22 @@
 import type { ComponentConfig } from "@puckeditor/core";
 import { defineMeta } from "@/lib/define-meta";
-import { OrchardLinkButtonRender, type OrchardLinkButtonProps } from "./orchard-link-button";
+import {
+  OrchardLinkButtonRender,
+  type OrchardLinkButtonProps,
+} from "./orchard-link-button";
 export type { OrchardLinkButtonProps };
 
 export const OrchardLinkButtonBlock: ComponentConfig<OrchardLinkButtonProps> = {
   fields: {
-    label: { type: "text" as const, ai: { instructions: "Button text, 2–4 words." } },
-    href: { type: "text" as const, label: "URL (https:// or /path)", ai: { exclude: true } },
+    label: {
+      type: "text" as const,
+      ai: { instructions: "Button text, 2–4 words." },
+    },
+    href: {
+      type: "text" as const,
+      label: "URL (https:// or /path)",
+      ai: { exclude: true },
+    },
     target: {
       type: "radio" as const,
       options: [
