@@ -1,0 +1,10 @@
+/* Orchard's off-canvas mobile menu depends on page-level scripts and a header that
+   moves the Menu button around. This block keeps the links in the bar instead and
+   lets them wrap on narrow screens, so the separate Menu button is not needed. */
+body .orchard-header-site-nav-bar .orchard-mobile-buttons {
+  display: none;
+}
+
+body .orchard-header-site-nav-bar .orchard-primary-nav__menu--level-1 {
+  flex-wrap: wrap;
+}

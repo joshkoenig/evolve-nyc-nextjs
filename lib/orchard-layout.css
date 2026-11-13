@@ -7,3 +7,17 @@
   padding-inline: clamp(1rem, 4vw, 2rem);
   padding-block: 0.75rem;
 }
+
+/* Dark background band: Orchard's dark modifier only switches text colors, so
+   the page supplies the background. Full width, content stays aligned. */
+.orchard-band--dark {
+  background: var(--orchard-palette-bg-dark, #02343d);
+  padding-block: 2rem;
+}
+
+/* A block placed inside another block (for example a Tileset inside a Group
+   Container) lines up with its parent instead of adding its own gutters. */
+.orchard-group-container__content .orchard-block {
+  max-inline-size: none;
+  padding: 0;
+}

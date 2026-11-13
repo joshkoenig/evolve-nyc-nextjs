@@ -25,9 +25,22 @@ export const OrchardHeaderBlock: ComponentConfig<OrchardHeaderProps> = {
       label: "Home link (https:// or /path)",
       ai: { exclude: true },
     },
+    showSearch: {
+      type: "radio" as const,
+      label: "Search",
+      options: [
+        { label: "Off", value: "off" },
+        { label: "On", value: "on" },
+      ],
+    },
+    searchAction: {
+      type: "text" as const,
+      label: "Search page (https:// or /path)",
+      ai: { exclude: true },
+    },
     navItems: {
       type: "array" as const,
-      label: "Navigation links",
+      label: "Simple links (optional; use Main Menu instead)",
       arrayFields: {
         label: {
           type: "text" as const,
@@ -41,7 +54,10 @@ export const OrchardHeaderBlock: ComponentConfig<OrchardHeaderProps> = {
       },
       defaultItemProps: { label: "Link", href: "/" },
       getItemSummary: (item: { label: string }) => item.label || "Link",
-      ai: { instructions: "4–6 main navigation links." },
+      ai: {
+        instructions:
+          "Leave empty and use the Orchard Main Menu block for navigation; only add simple links here for small sites.",
+      },
     },
   },
   defaultProps: {
@@ -49,12 +65,9 @@ export const OrchardHeaderBlock: ComponentConfig<OrchardHeaderProps> = {
     logoSrc: "",
     logoAlt: "",
     homeHref: "/",
-    navItems: [
-      { label: "Services", href: "/services" },
-      { label: "Locations", href: "/locations" },
-      { label: "News", href: "/news" },
-      { label: "Contact", href: "/contact" },
-    ],
+    showSearch: "on",
+    searchAction: "/search",
+    navItems: [],
   },
   render: OrchardHeaderRender,
 };
@@ -62,7 +75,7 @@ export const OrchardHeaderBlock: ComponentConfig<OrchardHeaderProps> = {
 export const meta = defineMeta({
   title: "Orchard Header",
   description:
-    "Orchard site header: branding bar with a site name (and optional logo) and a row of main navigation links.",
+    "Orchard site header: branding bar with the site name (and optional logo) and an optional search toggle. Pair with Orchard Main Menu for site navigation.",
   categories: ["orchard"],
   published: false,
 });
