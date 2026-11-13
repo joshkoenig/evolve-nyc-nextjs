@@ -4,3 +4,16 @@ allowBuilds:
   esbuild: true
   sharp: true
   workerd: true
+
+# Temporary: exempt versions published <24h before the first deploy from pnpm's
+# default minimumReleaseAge policy. Safe to remove once these versions are a day old.
+minimumReleaseAgeExclude:
+  - "@pantheon-systems/css-client@0.26.1"
+  - "@pantheon-systems/p1-next-sdk@0.26.1"
+  - "@pantheon-systems/puck-css@0.26.1"
+  - baseline-browser-mapping@2.11.37
+  - encodeurl@2.0.3
+  - enhanced-resolve@5.27.0
+  - tldts@7.5.0
+  - tldts-core@7.5.0
+  - ws@8.23.0
