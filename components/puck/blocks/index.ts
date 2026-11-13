@@ -63,6 +63,16 @@ import { ListBlock } from "./list/list.block";
 import { LocationsBlock } from "./locations/locations.block";
 import { LogoCloudBlock } from "./logos/logos.block";
 import { MarketplaceBlock } from "./marketplace/marketplace.block";
+import { OrchardAccordionBlock } from "./orchard-accordion/orchard-accordion.block";
+import { OrchardAlertBlock } from "./orchard-alert/orchard-alert.block";
+import { OrchardBreadcrumbsBlock } from "./orchard-breadcrumbs/orchard-breadcrumbs.block";
+import { OrchardCalloutBlock } from "./orchard-callout/orchard-callout.block";
+import { OrchardCardBlock } from "./orchard-card/orchard-card.block";
+import { OrchardFooterBlock } from "./orchard-footer/orchard-footer.block";
+import { OrchardHeaderBlock } from "./orchard-header/orchard-header.block";
+import { OrchardLinkButtonBlock } from "./orchard-link-button/orchard-link-button.block";
+import { OrchardTableBlock } from "./orchard-table/orchard-table.block";
+import { OrchardTeaserBlock } from "./orchard-teaser/orchard-teaser.block";
 import { ParagraphBlock } from "./paragraph/paragraph.block";
 import { PartnerDetailBlock } from "./partner-detail/partner-detail.block";
 import { PostEventBlock } from "./post-event/post-event.block";
@@ -124,6 +134,16 @@ export const p1Blocks = {
   Locations: LocationsBlock,
   LogoCloud: LogoCloudBlock,
   Marketplace: MarketplaceBlock,
+  OrchardAccordion: OrchardAccordionBlock,
+  OrchardAlert: OrchardAlertBlock,
+  OrchardBreadcrumbs: OrchardBreadcrumbsBlock,
+  OrchardCallout: OrchardCalloutBlock,
+  OrchardCard: OrchardCardBlock,
+  OrchardFooter: OrchardFooterBlock,
+  OrchardHeader: OrchardHeaderBlock,
+  OrchardLinkButton: OrchardLinkButtonBlock,
+  OrchardTable: OrchardTableBlock,
+  OrchardTeaser: OrchardTeaserBlock,
   Paragraph: ParagraphBlock,
   PartnerDetail: PartnerDetailBlock,
   PostEvent: PostEventBlock,
@@ -151,6 +171,7 @@ export const p1Categories = {
   global: { title: "Global", components: ["Footer", "Header"] },
   layout: { title: "Layout", components: ["Accordion", "Columns", "Container", "Tabs"] },
   listings: { title: "Listings", components: ["BlogIndex", "DocShell", "EventCalendar", "EventList", "Locations", "Marketplace", "PartnerDetail", "TopicRail", "WebinarReplay"] },
+  orchard: { title: "Orchard", components: ["OrchardAccordion", "OrchardAlert", "OrchardBreadcrumbs", "OrchardCallout", "OrchardCard", "OrchardFooter", "OrchardHeader", "OrchardLinkButton", "OrchardTable", "OrchardTeaser"] },
   showcase: { title: "Showcase", components: ["CardGrid", "Gallery", "Image"] },
   trust: { title: "Trust", components: ["BigMetric", "LogoCloud", "Stats", "TeamGrid", "Testimonial"] },
   value: { title: "Value", components: ["ChallengeResult", "FeatureCards", "FeatureMedia", "Integrations", "Steps", "Timeline"] },

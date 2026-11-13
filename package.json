@@ -15,6 +15,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@georgiagov/orchard": "2.14.0",
     "@pantheon-systems/cpub-react-sdk": "^5.2.1",
     "@pantheon-systems/css-client": "^0.26.1",
     "@pantheon-systems/p1-media": "^0.5.2",
